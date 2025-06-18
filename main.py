@@ -40,6 +40,11 @@ def main():
             if i.collide(player):
                 print("GAME OVER!")
                 sys.exit()
+            for s in shots_fired:
+                if i.collide(s):
+                    s.kill()
+                    i.split()
+
         # reset screen?
         pygame.display.flip()
         # limit fps to 60
